@@ -41,7 +41,7 @@ class OnboardingController extends GetxController {
     }
   }
 
-  void onChanged(int page) {
+  void onPageChanged(int page) {
     currentPage.value = page;
   }
 }

@@ -33,7 +33,7 @@ class OnboardingView extends GetView<OnboardingController> {
             Flexible(
               child: PageView.builder(
                 controller: controller.pageC,
-                onPageChanged: controller.onChanged,
+                onPageChanged: controller.onPageChanged,
                 itemCount: controller.onBoardingData.length,
                 itemBuilder: (_, index) {
                   return Scaffold(
@@ -65,7 +65,7 @@ class OnboardingView extends GetView<OnboardingController> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: List.generate(
-                  3,
+                  controller.onBoardingData.length,
                   (index) {
                     return CPadding(
                       padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -136,8 +136,8 @@ class OnboardingView extends GetView<OnboardingController> {
                             ),
                           ),
                         ),
-                      )
-                    ]
+                      ),
+                    ],
                   ],
                 ),
               ),
