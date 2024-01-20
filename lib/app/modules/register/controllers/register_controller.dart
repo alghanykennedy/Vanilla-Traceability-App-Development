@@ -13,7 +13,7 @@ class RegisterController extends GetxController {
   final registerKey = GlobalKey<FormState>();
 
   void register() {
-    Get.offAllNamed(Routes.HOME);
+    Get.offAllNamed(Routes.OTP);
   }
 
   void selectGender(String? selectGender) {

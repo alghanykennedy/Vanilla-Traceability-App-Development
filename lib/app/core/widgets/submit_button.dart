@@ -34,14 +34,14 @@ class CSubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color defaultColor = color ?? purple;
+    final Color defaultColor = color ?? primary;
 
     return Material(
       color: enabled
           ? outlined
               ? white
               : defaultColor
-          : purple35,
+          : grey,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
         side: enabled && outlined
