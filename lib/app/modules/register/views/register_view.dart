@@ -4,34 +4,67 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vanilla_traceability_app/app/core/theme.dart';
 import 'package:vanilla_traceability_app/app/core/validation.dart';
+import 'package:vanilla_traceability_app/app/core/widgets/auth_header.dart';
+import 'package:vanilla_traceability_app/app/core/widgets/formfield.dart';
 import 'package:vanilla_traceability_app/app/core/widgets/sizedbox.dart';
-import 'package:vanilla_traceability_app/app/core/widgets/submit_button.dart';
 import 'package:vanilla_traceability_app/app/core/widgets/text.dart';
-import 'package:vanilla_traceability_app/app/routes/app_pages.dart';
 
 import '../../../core/constants.dart';
-import '../../../core/widgets/auth_header.dart';
-import '../../../core/widgets/formfield.dart';
-import '../controllers/login_controller.dart';
+import '../../../core/widgets/submit_button.dart';
+import '../controllers/register_controller.dart';
 
-class LoginView extends GetView<LoginController> with Validation {
-  const LoginView({super.key});
+class RegisterView extends GetView<RegisterController> with Validation {
+  const RegisterView({super.key});
+
+  void _login() {
+    Get.back();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 18.w),
         child: Form(
-          key: controller.loginKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Center(
                 child: AuthHeader(
-                  title: titleLogin,
-                  subtitle: subtitleLogin,
+                  title: titleButtonRegister,
+                  subtitle: titleCreateAccount,
                 ),
+              ),
+              CText(
+                titleFullName,
+                style: CFonts.inter(4, 12),
+              ),
+              const CSizedBox(
+                height: 8,
+              ),
+              CFormField(
+                controller: controller.name,
+                validator: inputRequired,
+              ),
+              const CSizedBox(
+                height: 24,
+              ),
+              CText(
+                titleAddress,
+                style: CFonts.inter(4, 12),
+              ),
+              const CSizedBox(
+                height: 8,
+              ),
+              CFormField(
+                controller: controller.address,
+                validator: inputRequired,
+              ),
+              const CSizedBox(
+                height: 24,
               ),
               CText(
                 titleFormPhoneNumber,
@@ -41,8 +74,8 @@ class LoginView extends GetView<LoginController> with Validation {
                 height: 8,
               ),
               CFormField(
-                controller: controller.noHandphone,
-                keyboardType: TextInputType.number,
+                controller: controller.phoneNumber,
+                validator: inputRequired,
               ),
               const CSizedBox(
                 height: 24,
@@ -59,50 +92,37 @@ class LoginView extends GetView<LoginController> with Validation {
                 validator: passwordRequired,
                 keyboardType: TextInputType.visiblePassword,
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: CText(
-                    titleButtonForgoPassword,
-                    color: primary,
-                    style: CFonts.inter(4, 12),
-                  ),
-                ),
-              ),
               const CSizedBox(
                 height: 40,
               ),
               CSubmitButton(
                 color: primary,
-                onTap: controller.login,
-                large: true,
-                action: titleButtonLogin,
+                onTap: controller.register,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                actionStyle: CFonts.dmSans(7, 16),
+                action: titleButtonRegister,
               ),
-              const CSizedBox(
-                height: 34,
-              ),
+              const CSizedBox(height: 24),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CText(
-                      titleDontHaveAnAccount,
+                      alreadyHaveAnAccount,
                       style: CFonts.inter(4, 12),
                     ),
                     TextButton(
-                      onPressed: () {
-                        Get.toNamed(Routes.REGISTER);
-                      },
+                      onPressed: _login,
                       child: CText(
-                        titleButtonRegister,
+                        titleButtonLogin,
                         color: primary,
                         style: CFonts.inter(4, 12),
                       ),
                     ),
                   ],
                 ),
-              )
+              ),
+              const CSizedBox(height: 40)
             ],
           ),
         ),
