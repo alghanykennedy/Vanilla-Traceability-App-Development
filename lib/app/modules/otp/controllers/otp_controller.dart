@@ -12,7 +12,9 @@ class OtpController extends GetxController {
   final page = PageController();
 
   void onCompleted(String value) {
-    enableButton.value = true;
+    if (value == "1111") {
+      enableButton.value = true;
+    }
   }
 
   void verifyOtp() {

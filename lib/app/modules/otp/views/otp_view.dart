@@ -37,6 +37,12 @@ class OtpView extends GetView<OtpController> with Validation {
                 focusedPinTheme: focusedPinTheme,
                 focusNode: controller.otpNode,
                 onCompleted: controller.onCompleted,
+                validator: (value) {
+                  if (value == '1111') return null;
+
+                  /// Text will be displayed under the Pinput
+                  return 'Pin is incorrect';
+                },
               ),
               const CSizedBox(
                 height: 40,
