@@ -7,8 +7,8 @@ import '../../../../core/widgets/padding.dart';
 import '../../../../core/widgets/sizedbox.dart';
 import '../../../../core/widgets/text.dart';
 
-class ProfilePhotoView extends StatelessWidget {
-  const ProfilePhotoView({
+class ProfileEditPhotoView extends StatelessWidget {
+  const ProfileEditPhotoView({
     super.key,
   });
 

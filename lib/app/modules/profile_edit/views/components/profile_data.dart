@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vanilla_traceability_app/app/core/validation.dart';
 import 'package:vanilla_traceability_app/app/core/widgets/submit_button.dart';
-import 'package:vanilla_traceability_app/app/modules/profile/controllers/profile_controller.dart';
+import 'package:vanilla_traceability_app/app/modules/profile_edit/controllers/profile_edit_controller.dart';
 
 import '../../../../core/assets.dart';
 import '../../../../core/theme.dart';
@@ -13,8 +13,9 @@ import '../../../../core/widgets/sizedbox.dart';
 import '../../../../core/widgets/svg_picture.dart';
 import '../../../../core/widgets/text.dart';
 
-class ProfileDataView extends GetView<ProfileController> with Validation {
-  const ProfileDataView({super.key});
+class ProfileEditDataView extends GetView<ProfileEditController>
+    with Validation {
+  const ProfileEditDataView({super.key});
   @override
   Widget build(BuildContext context) {
     return CPadding(
@@ -113,7 +114,9 @@ class ProfileDataView extends GetView<ProfileController> with Validation {
             ),
             const CSizedBox(height: 40),
             CSubmitButton(
-              onTap: () {},
+              onTap: () {
+                Get.back();
+              },
               large: true,
               action: "Save",
             ),
