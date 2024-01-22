@@ -16,6 +16,10 @@ const icPrivacyPolicy = "assets/icons/ic_privacy_policy.svg";
 const icHelpCenter = "assets/icons/ic_help_center.svg";
 const icLogout = "assets/icons/ic_logout.svg";
 const icRight = "assets/icons/ic_right.svg";
+const icChatConsultation = "assets/icons/ic_consultation.svg";
+const icChatRoom = "assets/icons/ic_chat_room.svg";
+const icAttachImage = "assets/icons/ic_attach_image.svg";
+const icSend = "assets/icons/ic_send.svg";
 
 // assets/images
 const imgLogo = "assets/images/img_logo.png";

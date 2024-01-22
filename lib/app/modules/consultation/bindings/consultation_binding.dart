@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../dashboard/controllers/dashboard_controller.dart';
 import '../controllers/consultation_controller.dart';
 
 class ConsultationBinding extends Bindings {
@@ -7,6 +8,9 @@ class ConsultationBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<ConsultationController>(
       () => ConsultationController(),
+    );
+    Get.lazyPut<DashboardController>(
+      () => DashboardController(),
     );
   }
 }

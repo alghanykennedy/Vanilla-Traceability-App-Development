@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:vanilla_traceability_app/app/core/theme.dart';
 import 'package:vanilla_traceability_app/app/core/widgets/text.dart';
 
@@ -8,6 +9,9 @@ bool isEmpty(dynamic value) => ['null', '', '[]', '{}', '0'].contains("$value");
 
 bool isNotEmpty(dynamic value) =>
     !['null', '', '[]', '{}', '0'].contains("$value");
+
+String formatDate(String date) =>
+    DateFormat("d MMM y", "id").format(DateTime.parse(date));
 
 void showSnack(String errorMsg) {
   ScaffoldMessenger.of(Get.context!).showSnackBar(
