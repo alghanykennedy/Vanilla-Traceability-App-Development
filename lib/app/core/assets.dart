@@ -28,3 +28,5 @@ const imgOnBoarding2 = "assets/images/img_onboarding2.png";
 const imgOnBoarding3 = "assets/images/img_onboarding3.png";
 const imgSuccess = "assets/images/img_success.png";
 const imgProfile = "assets/images/img_profile.png";
+const imgVaniliBean = "assets/images/img_vanilli_bean.jpg";
+const imgMaps = "assets/images/img_maps.png";

@@ -77,6 +77,7 @@ class ProfileMenu extends GetView<ProfileController> {
           (index) => _item(
             onTap: () {},
             icon: controller.data.values.elementAt(index),
+            iconColor: primary,
             action: controller.data.keys.elementAt(index),
           ),
         ),

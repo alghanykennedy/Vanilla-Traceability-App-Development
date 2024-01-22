@@ -58,8 +58,8 @@ class ProfileHeader extends GetView<ProfileController> {
                 children: [
                   CText(
                     "Alghany Kennedy Adam",
-                    style: CFonts.inter(5, 16),
-                    color: black,
+                    style: CFonts.inter(6, 16),
+                    color: white,
                   ),
                   CText(
                     "085872049687",
@@ -86,7 +86,7 @@ class ProfileHeader extends GetView<ProfileController> {
                     alignment: Alignment.topRight,
                     child: CSvg(
                       icEdit,
-                      color: black,
+                      color: white,
                     ),
                   ),
                 ),
