@@ -29,6 +29,7 @@ const white = Color(0xFFFFFFFF);
 const white20 = Color.fromRGBO(255, 255, 255, .2);
 const borderColor = Color.fromRGBO(217, 217, 217, .5);
 const shadowColor = Color.fromRGBO(224, 224, 236, .3);
+const blue = Color(0xff3c6fd1);
 
 const BoxShadow shadowSmooth = BoxShadow(
   color: Color.fromRGBO(186, 190, 220, .15),

@@ -1,23 +1,28 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vanilla_traceability_app/app/data/models/home_item_model.dart';
+
+import '../../../core/assets.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  final scrollC = ScrollController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  final homeMenuItem = <HomeMenuItemModel>[
+    HomeMenuItemModel(
+      title: "Harvest",
+      image: imgHarvest,
+    ),
+    HomeMenuItemModel(
+      title: "Fertilizer",
+      image: imgFertilizer,
+    ),
+    HomeMenuItemModel(
+      title: "Water",
+      image: imgSprinkler,
+    ),
+    HomeMenuItemModel(
+      title: "Report",
+      image: imgReport,
+    ),
+  ];
 }
