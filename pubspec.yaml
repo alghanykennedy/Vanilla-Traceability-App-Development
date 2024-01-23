@@ -6,10 +6,24 @@ environment:
   sdk: ">=3.2.3 <4.0.0"
 
 dependencies:
+  another_stepper: ^1.2.2
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_map: ^6.1.0
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.9
   get: 4.6.6
+  google_fonts: ^6.1.0
+  intl: ^0.19.0
+  pinput: ^3.0.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/img_logo.png"
+  min_sdk_android: 21
 
 dev_dependencies:
   flutter_lints: 3.0.1
@@ -18,3 +32,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/
