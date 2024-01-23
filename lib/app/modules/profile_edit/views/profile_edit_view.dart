@@ -12,7 +12,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
   @override
   Widget build(BuildContext context) {
     return const CPage(
-      title: "Profile",
+      title: "Edit Profile",
       padding: EdgeInsets.all(0),
       children: [
         ProfileEditPhotoView(),

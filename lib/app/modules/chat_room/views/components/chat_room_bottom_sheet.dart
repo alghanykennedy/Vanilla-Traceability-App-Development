@@ -32,7 +32,7 @@ class ChatRoomBottomSheet extends GetView<ChatRoomController> {
       hintText: "Write a message...",
       suffixIcon: InkWell(
         onTap: () {
-          Get.to(const ChatRoomConvertation());
+          Get.to(() => const ChatRoomConvertation());
         },
         child: const CPadding(
           padding: EdgeInsets.all(12),
