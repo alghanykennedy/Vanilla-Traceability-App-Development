@@ -24,7 +24,7 @@ class MenuCard extends StatelessWidget {
             borderRadius: BorderRadius.all(
               Radius.circular(8),
             ),
-            color: white,
+            color: vanilla,
             boxShadow: [
               BoxShadow(
                 color: shadowColor,

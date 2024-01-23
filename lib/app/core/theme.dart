@@ -5,6 +5,7 @@ import 'package:pinput/pinput.dart';
 
 const primary = Color(0xFFB9904A);
 const secondary = Color(0xFFDCB5A1);
+const vanilla = Color(0xFFF3E5AB);
 const red = Color.fromRGBO(236, 66, 96, 1);
 const red10 = Color.fromRGBO(236, 66, 96, .1);
 const green = Color(0xFF369B43);
