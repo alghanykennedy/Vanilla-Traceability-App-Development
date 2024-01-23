@@ -12,8 +12,20 @@ class RegisterController extends GetxController {
   final gender = "L".obs;
   final registerKey = GlobalKey<FormState>();
 
+  final RxString passwordCustomer = "".obs;
+  final RxBool isEnable = false.obs;
+
+  void enableButton() {
+    isEnable.value = passwordCustomer.value.length >= 8 == true;
+  }
+
   void register() {
     Get.offAllNamed(Routes.HOME);
+  }
+
+  void setPassword(value) {
+    passwordCustomer.value = value;
+    enableButton();
   }
 
   void selectGender(String? selectGender) {

@@ -23,110 +23,154 @@ class RegisterView extends GetView<RegisterController> with Validation {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 18.w),
-        child: Form(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Center(
-                child: AuthHeader(
-                  title: titleButtonRegister,
-                  subtitle: titleCreateAccount,
+      body: Obx(
+        () => SingleChildScrollView(
+          padding: EdgeInsets.only(left: 18.w, top: 20.h, right: 18.w),
+          child: Form(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Center(
+                  child: AuthHeader(
+                    title: titleButtonRegister,
+                    subtitle: titleCreateAccount,
+                  ),
                 ),
-              ),
-              CText(
-                titleFullName,
-                style: CFonts.inter(4, 12),
-              ),
-              const CSizedBox(
-                height: 8,
-              ),
-              CFormField(
-                controller: controller.name,
-                validator: inputRequired,
-              ),
-              const CSizedBox(
-                height: 24,
-              ),
-              CText(
-                titleAddress,
-                style: CFonts.inter(4, 12),
-              ),
-              const CSizedBox(
-                height: 8,
-              ),
-              CFormField(
-                controller: controller.address,
-                validator: inputRequired,
-              ),
-              const CSizedBox(
-                height: 24,
-              ),
-              CText(
-                titleFormPhoneNumber,
-                style: CFonts.inter(4, 12),
-              ),
-              const CSizedBox(
-                height: 8,
-              ),
-              CFormField(
-                controller: controller.phoneNumber,
-                validator: inputRequired,
-              ),
-              const CSizedBox(
-                height: 24,
-              ),
-              CText(
-                titleFormPassword,
-                style: CFonts.inter(4, 12),
-              ),
-              const CSizedBox(
-                height: 8,
-              ),
-              CFormField(
-                controller: controller.password,
-                validator: passwordRequired,
-                keyboardType: TextInputType.visiblePassword,
-              ),
-              const CSizedBox(
-                height: 40,
-              ),
-              CSubmitButton(
-                color: primary,
-                onTap: controller.register,
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                actionStyle: CFonts.dmSans(7, 16),
-                action: titleButtonRegister,
-              ),
-              const CSizedBox(height: 24),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CText(
-                      alreadyHaveAnAccount,
-                      style: CFonts.inter(4, 12),
-                    ),
-                    TextButton(
-                      onPressed: _login,
-                      child: CText(
-                        titleButtonLogin,
-                        color: primary,
+                const TitleFormRegister(
+                  title: titleFullName,
+                ),
+                const CSizedBox(
+                  height: 8,
+                ),
+                CFormField(
+                  controller: controller.name,
+                  validator: inputRequired,
+                  keyboardType: TextInputType.name,
+                ),
+                const CSizedBox(
+                  height: 24,
+                ),
+                const TitleFormRegister(
+                  title: titleFormPhoneNumber,
+                ),
+                const CSizedBox(
+                  height: 8,
+                ),
+                CFormField(
+                  controller: controller.phoneNumber,
+                  validator: inputRequired,
+                  keyboardType: TextInputType.phone,
+                ),
+                const CSizedBox(
+                  height: 24,
+                ),
+                const TitleFormRegister(
+                  title: titleAddress,
+                ),
+                const CSizedBox(
+                  height: 8,
+                ),
+                CFormField(
+                  controller: controller.address,
+                  validator: inputRequired,
+                  keyboardType: TextInputType.streetAddress,
+                ),
+                const CSizedBox(
+                  height: 24,
+                ),
+                const TitleFormRegister(
+                  title: titleFormPassword,
+                ),
+                const CSizedBox(
+                  height: 8,
+                ),
+                CFormField(
+                  controller: controller.password,
+                  validator: passwordRequired,
+                  keyboardType: TextInputType.visiblePassword,
+                  onChanged: (value) {
+                    controller.setPassword(value);
+                  },
+                ),
+                const CSizedBox(
+                  height: 5,
+                ),
+                controller.passwordCustomer.value.isNotEmpty &&
+                        controller.passwordCustomer.value.length < 8
+                    ? Padding(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: CText(
+                          'Password minimum has 8 character',
+                          style: CFonts.inter(4, 12, red),
+                        ),
+                      )
+                    : controller.passwordCustomer.isEmpty
+                        ? const SizedBox()
+                        : const SizedBox(),
+                const CSizedBox(
+                  height: 65,
+                ),
+                CSubmitButton(
+                  color: primary,
+                  onTap: controller.register,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  actionStyle: CFonts.dmSans(7, 16),
+                  action: titleButtonRegister,
+                  enabled: controller.isEnable.value,
+                ),
+                const CSizedBox(height: 24),
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CText(
+                        alreadyHaveAnAccount,
                         style: CFonts.inter(4, 12),
                       ),
-                    ),
-                  ],
+                      TextButton(
+                        onPressed: _login,
+                        child: CText(
+                          titleButtonLogin,
+                          color: primary,
+                          style: CFonts.inter(4, 12),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const CSizedBox(height: 40)
-            ],
+              ],
+            ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class TitleFormRegister extends StatelessWidget {
+  const TitleFormRegister({
+    super.key,
+    required this.title,
+  });
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CText(
+          title,
+          style: CFonts.inter(4, 12),
+        ),
+        const CSizedBox(
+          width: 5,
+        ),
+        CText(
+          "*",
+          style: CFonts.inter(4, 12, red),
+        ),
+      ],
     );
   }
 }
