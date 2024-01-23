@@ -69,7 +69,7 @@ class TrackAddress extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            Get.to(const TrackMaps());
+            Get.to(() => const TrackMaps());
           },
           child: CPadding(
             padding: const EdgeInsets.all(4),

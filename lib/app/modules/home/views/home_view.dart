@@ -19,6 +19,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 50,
         title: CPadding(
           padding: const EdgeInsets.only(left: 8),
