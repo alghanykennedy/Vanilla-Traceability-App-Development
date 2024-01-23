@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vanilla_traceability_app/app/core/helper.dart';
 
 import 'assets.dart';
 import 'theme.dart';
@@ -94,11 +95,20 @@ class CPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              const CSizedBox(width: 8),
+                              const CSizedBox(width: 15),
                             ],
                           ],
                         ),
                       ),
+                      if (isNotEmpty(leadingImg)) ...[
+                        CircleAvatar(
+                          radius: 18,
+                          backgroundImage: AssetImage(leadingImg!),
+                        ),
+                        const CSizedBox(
+                          width: 10,
+                        )
+                      ],
                       CSizedBox(
                         height: 34,
                         child: Center(
@@ -117,6 +127,7 @@ class CPage extends StatelessWidget {
                           ),
                         ),
                       ],
+                      if (isNotEmpty(actions)) ...[const Spacer(), ...actions!],
                     ],
                   ),
                 ),
