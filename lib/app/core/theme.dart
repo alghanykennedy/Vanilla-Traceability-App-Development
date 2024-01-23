@@ -5,6 +5,7 @@ import 'package:pinput/pinput.dart';
 
 const primary = Color(0xFFB9904A);
 const secondary = Color(0xFFDCB5A1);
+const vanilla = Color(0xFFF3E5AB);
 const red = Color.fromRGBO(236, 66, 96, 1);
 const red10 = Color.fromRGBO(236, 66, 96, .1);
 const green = Color(0xFF369B43);
@@ -29,6 +30,7 @@ const white = Color(0xFFFFFFFF);
 const white20 = Color.fromRGBO(255, 255, 255, .2);
 const borderColor = Color.fromRGBO(217, 217, 217, .5);
 const shadowColor = Color.fromRGBO(224, 224, 236, .3);
+const blue = Color(0xff3c6fd1);
 
 const BoxShadow shadowSmooth = BoxShadow(
   color: Color.fromRGBO(186, 190, 220, .15),
