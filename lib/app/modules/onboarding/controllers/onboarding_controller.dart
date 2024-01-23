@@ -32,7 +32,7 @@ class OnboardingController extends GetxController {
         curve: Curves.fastLinearToSlowEaseIn,
       );
     } else if (currentPage.value == 2) {
-      Get.offAllNamed(Routes.HOME);
+      Get.offAllNamed(Routes.LOGIN);
     } else {
       pageC.nextPage(
         duration: const Duration(milliseconds: 400),
