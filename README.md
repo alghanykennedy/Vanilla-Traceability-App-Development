@@ -40,12 +40,12 @@ Contains various user information, including profile image, name, email, points 
 ### 11. Edit Profile Screen
 Allows users to edit personal details and notification settings.
 
-### Additional Validator
+### 12. Additional Validator
 Ensures data submitted in forms is validated, with specific criteria such as:
  - An 8-character minimum password
  - Correct PIN of 1111
 
-** Project Structure
+## Project Structure
 ```
 |-- lib
     |-- app
