@@ -27,8 +27,8 @@ The first screen of information displayed when a mobile device is started. Also 
 ### 7. Track Screen
 Allowing users to monitor and track the movements, location, or status of an object or entity in real-time.
 
-### 8. Address Screen
-Allows the user to select an address.
+### 8. Map Address Screen
+Allows the user to see map or location in real-time and select an address.
 
 ### 9. Consultation Screen
 Where all the messages between two people are displayed.
@@ -70,6 +70,7 @@ The Edit profile screen allows you to edit your personal details and notificatio
   ## Technologies and Packages Used
 
 - Flutter latest version
+- [Figma](https://www.figma.com/file/7Kiy7knjFGe6UsPnbcTqLz/Vanilla-Traceability?type=design&t=y3JKKbXBht9VMnhR-6) UI/UX by me
 - [GetX](https://github.com/jonataslaw/getx) for state management 
 - [google_fonts](https://pub.dev/packages/google_fonts) A Flutter package to use fonts from fonts.google.com
 - [another_stpper](https://pub.dev/packages/another_stepper) A flutter package to create easily customizable Horizontal and Vertical stepper
