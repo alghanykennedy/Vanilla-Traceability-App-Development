@@ -8,6 +8,6 @@ class LoginController extends GetxController {
   final password = TextEditingController();
 
   void login() async {
-    Get.offAllNamed(Routes.HOME);
+    Get.offAllNamed(Routes.DASHBOARD);
   }
 }
