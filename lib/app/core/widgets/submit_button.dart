@@ -34,7 +34,7 @@ class CSubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color defaultColor = color ?? purple;
+    final Color defaultColor = color ?? primary;
 
     return Material(
       color: enabled

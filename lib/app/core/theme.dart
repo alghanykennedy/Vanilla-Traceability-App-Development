@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pinput/pinput.dart';
 
-const primary = Color(0xFFAF795D);
+const primary = Color(0xFFB9904A);
 const secondary = Color(0xFFDCB5A1);
 const red = Color.fromRGBO(236, 66, 96, 1);
 const red10 = Color.fromRGBO(236, 66, 96, .1);
@@ -93,5 +94,21 @@ const _lightAppBar = AppBarTheme(
     statusBarColor: Colors.transparent,
     statusBarBrightness: Brightness.light,
     statusBarIconBrightness: Brightness.dark,
+  ),
+);
+
+final defaultPinTheme = PinTheme(
+  width: 56,
+  height: 56,
+  textStyle: CFonts.inter(5, 18),
+  decoration: BoxDecoration(
+    borderRadius: const BorderRadius.all(Radius.circular(10)),
+    border: Border.all(color: borderColor),
+  ),
+);
+final focusedPinTheme = defaultPinTheme.copyWith(
+  decoration: BoxDecoration(
+    borderRadius: const BorderRadius.all(Radius.circular(10)),
+    border: Border.all(color: primary),
   ),
 );

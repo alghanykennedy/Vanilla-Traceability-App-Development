@@ -20,7 +20,7 @@ class RegisterController extends GetxController {
   }
 
   void register() {
-    Get.offAllNamed(Routes.HOME);
+    Get.offAllNamed(Routes.OTP);
   }
 
   void setPassword(value) {
