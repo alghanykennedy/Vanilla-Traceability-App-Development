@@ -41,7 +41,7 @@ class CSubmitButton extends StatelessWidget {
           ? outlined
               ? white
               : defaultColor
-          : purple35,
+          : grey,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
         side: enabled && outlined

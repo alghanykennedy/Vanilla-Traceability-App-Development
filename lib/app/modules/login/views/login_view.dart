@@ -7,6 +7,7 @@ import 'package:vanilla_traceability_app/app/core/validation.dart';
 import 'package:vanilla_traceability_app/app/core/widgets/sizedbox.dart';
 import 'package:vanilla_traceability_app/app/core/widgets/submit_button.dart';
 import 'package:vanilla_traceability_app/app/core/widgets/text.dart';
+import 'package:vanilla_traceability_app/app/routes/app_pages.dart';
 
 import '../../../core/constants.dart';
 import '../../../core/widgets/auth_header.dart';
@@ -33,7 +34,7 @@ class LoginView extends GetView<LoginController> with Validation {
                 ),
               ),
               CText(
-                titleFormNoHandPhone,
+                titleFormPhoneNumber,
                 style: CFonts.inter(4, 12),
               ),
               const CSizedBox(
@@ -90,7 +91,9 @@ class LoginView extends GetView<LoginController> with Validation {
                       style: CFonts.inter(4, 12),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.REGISTER);
+                      },
                       child: CText(
                         titleButtonRegister,
                         color: primary,
