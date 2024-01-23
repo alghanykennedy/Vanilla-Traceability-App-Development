@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:vanilla_traceability_app/app/core/page.dart';
 
 import '../controllers/profile_controller.dart';
+import 'components/profile_header.dart';
+import 'components/profile_menu.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  const ProfileView({Key? key}) : super(key: key);
+  const ProfileView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ProfileView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'ProfileView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+    return const CPage(
+      title: "Profile",
+      padding: EdgeInsets.all(0),
+      children: [
+        ProfileHeader(),
+        ProfileMenu(),
+      ],
     );
   }
 }

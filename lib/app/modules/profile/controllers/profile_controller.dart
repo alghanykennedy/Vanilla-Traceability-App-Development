@@ -1,23 +1,39 @@
 import 'package:get/get.dart';
+import 'package:vanilla_traceability_app/app/routes/app_pages.dart';
+
+import '../../../core/assets.dart';
 
 class ProfileController extends GetxController {
-  //TODO: Implement ProfileController
+  final data = <String, String>{
+    "Address": icAddress,
+    "Payment": icPayment,
+    "Notification": icNotification,
+    "Privacy Policy": icPrivacyPolicy,
+    "help Center": icHelpCenter,
+  };
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void onTap(int index) {
+    String route = "";
+
+    switch (index) {
+      case 0:
+        route = "";
+      case 1:
+        route = "";
+      case 2:
+        route = "";
+      case 3:
+        route = "";
+      case 4:
+        route = "";
+    }
+
+    Get.toNamed(route);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  void logout() {
+    Get.back();
 
-  @override
-  void onClose() {
-    super.onClose();
+    Get.offAllNamed(Routes.LOGIN);
   }
-
-  void increment() => count.value++;
 }

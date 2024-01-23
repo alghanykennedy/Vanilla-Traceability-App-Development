@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 
 import '../modules/consultation/bindings/consultation_binding.dart';
@@ -14,6 +16,8 @@ import '../modules/otp/bindings/otp_binding.dart';
 import '../modules/otp/views/otp_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/profile_edit/bindings/profile_edit_binding.dart';
+import '../modules/profile_edit/views/profile_edit_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -85,6 +89,11 @@ class AppPages {
       name: _Paths.TRACK,
       page: () => const TrackView(),
       binding: TrackBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE_EDIT,
+      page: () => const ProfileEditView(),
+      binding: ProfileEditBinding(),
     ),
   ];
 }
