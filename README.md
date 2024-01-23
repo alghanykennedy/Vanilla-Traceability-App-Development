@@ -2,7 +2,8 @@
 
 ![image](https://github.com/alghanykennedy/Vanilla-Traceability-App-Development/assets/82708330/1ea7b79d-ff87-4dd8-81fe-165461f206a0)
 
-Traceability Application for Farmers Vanilla supply Chain. This application built with Flutter 3.0 and powered by the GetX CLI pattern for state management. This app allows user to create account, login, tracking harvest supply from their field to point location, information about weather, latest news, daily reporting, harvest, fertilizer, & water, than user can change or add information for completed their profile and last user can chat with other user or admin.
+## Description
+Traceability Application for Farmers Vanilla supply Chain. This application built with Flutter latest version and powered by the GetX CLI pattern for state management. This app allows user to create account, login, tracking harvest supply from their field to point location, information about weather, latest news, daily reporting, harvest, fertilizer, & water, than user can change or add information for completed their profile and last user can chat with other user or admin.
 
 ## Features
 
@@ -61,7 +62,7 @@ The Edit profile screen allows you to edit your personal details and notificatio
 
 ## How to Run the App
 
-- Choose *dev* Branch
+- Choose `dev` Branch
 - Clone the repository
 - Ensure you have Flutter last version installed and set up
 - Run `flutter pub get` to fetch the project dependencies
@@ -70,7 +71,7 @@ The Edit profile screen allows you to edit your personal details and notificatio
   ## Technologies and Packages Used
 
 - Flutter latest version
-- [Figma](https://www.figma.com/file/7Kiy7knjFGe6UsPnbcTqLz/Vanilla-Traceability?type=design&t=y3JKKbXBht9VMnhR-6) UI/UX by me
+- [Figma](https://www.figma.com/file/7Kiy7knjFGe6UsPnbcTqLz/Vanilla-Traceability?type=design&t=y3JKKbXBht9VMnhR-6) UI/UX Design by me
 - [GetX](https://github.com/jonataslaw/getx) for state management 
 - [google_fonts](https://pub.dev/packages/google_fonts) A Flutter package to use fonts from fonts.google.com
 - [another_stpper](https://pub.dev/packages/another_stepper) A flutter package to create easily customizable Horizontal and Vertical stepper
